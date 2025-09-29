@@ -1,11 +1,12 @@
+const activityRepository = require('../repository/activityRepository')
+
 exports.createActivity = (id) => {
     console.log(id);
     return "CREATE ACTIVITY";
 }
 
-exports.readActivity = (id) => {
-    console.log(id);
-    return "READ ACTIVITY";
+exports.readActivity = () => {
+    console.log(activityRepository.readActivity());
 }
 
 exports.updateActivity = (id) => {
