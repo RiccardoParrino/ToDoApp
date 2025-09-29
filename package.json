@@ -1,5 +1,5 @@
 {
-  "name": "todoapp",
+  "name": "y",
   "version": "1.0.0",
   "description": "To Do List App written in TypeScript/Node.Js/Express.Js/Angular.",
   "main": "index.js",
@@ -10,7 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/RiccardoParrino/ToDoApp.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -18,7 +17,6 @@
   },
   "homepage": "https://github.com/RiccardoParrino/ToDoApp#readme",
   "dependencies": {
-    "expres": "^0.0.5",
     "express": "^5.1.0"
   }
 }
