@@ -5,8 +5,8 @@ exports.createActivity = (id) => {
     return "CREATE ACTIVITY";
 }
 
-exports.readActivity = async () => {
-    return await activityRepository.readActivity();
+exports.readActivity = () => {
+    return activityRepository.readActivity();
 }
 
 exports.updateActivity = (id) => {
