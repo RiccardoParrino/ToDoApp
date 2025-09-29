@@ -3,7 +3,7 @@ exports.createActivity = (req, res, next) => {
 }
 
 exports.readActivity = (req, res, next) => {
-    res.send("READ ALL ACTIVITIES!");
+    res.send("READ ACTIVITY!");
 }
 
 exports.updateActivity = (req, res, next) => {
