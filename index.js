@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
-const activityRoutes = require('./routes/activityRoutes');
 const port = 8080;
 
+const activityRoutes = require('./routes/activityRoutes');
+const authenticationRoutes = require('./routes/authenticationRoutes');
+
+app.use('/auth',authenticationRoutes);
 app.use('/activity',activityRoutes);
 
 app.listen(port, () => {
