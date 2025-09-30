@@ -29,3 +29,16 @@ exports.createActivity = async (name) => {
         await client.close();
     }
 }
+
+exports.updateActivity = async (name, newName) => {
+    try {
+        await client.connect();
+        const db = client.db("temp");
+        const collection = db.collection("activity");
+
+        await collection.updateOne( {"name":name}, { $set: {"name":newName} } );
+        return;
+    } finally {
+        await client.close();
+    }
+}

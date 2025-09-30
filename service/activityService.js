@@ -8,8 +8,8 @@ exports.readActivity = () => {
     return activityRepository.readActivity();
 }
 
-exports.updateActivity = (id) => {
-    return "UPDATE ACTIVITY";
+exports.updateActivity = (name, newName) => {
+    return activityRepository.updateActivity(name, newName);
 }
 
 exports.deleteActivity = (id) => {

@@ -11,8 +11,11 @@ exports.readActivity = async (req, res, next) => {
     res.send(await activityService.readActivity());
 }
 
-exports.updateActivity = (req, res, next) => {
-    activityService.updateActivity(req);
+exports.updateActivity = async (req, res, next) => {
+    const name = req.query.name;
+    const newName = req.query.newName;
+    await activityService.updateActivity(name, newName);
+    res.send("DONE");
 }
 
 exports.deleteActivity = (req, res, next) => {
