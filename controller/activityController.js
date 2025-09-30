@@ -1,7 +1,10 @@
 const activityService = require('../service/activityService');
 
-exports.createActivity = (req, res, next) => {
-    activityService.createActivity(req);
+exports.createActivity = async (req, res, next) => {
+    console.log("request");
+    console.log(req.query.name);
+    await activityService.createActivity(req.query.name);
+    res.send("DONE");
 }
 
 exports.readActivity = async (req, res, next) => {

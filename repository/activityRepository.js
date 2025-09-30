@@ -16,3 +16,16 @@ exports.readActivity = async () => {
         await client.close();
     }
 }
+
+exports.createActivity = async (name) => {
+    try {
+        await client.connect();
+        const db = client.db("temp");
+        const collection = db.collection("activity");
+
+        await collection.insertOne({"name":name});
+        return;
+    } finally {
+        await client.close();
+    }
+}
