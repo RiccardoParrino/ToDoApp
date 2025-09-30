@@ -1,1 +1,11 @@
-<p>activity works!</p>
+<div class="activity-container" *ngFor="let activity of activities">
+    <div class="activity-left-container">
+        <p>{{activity.name}}</p>
+        <p>{{activity.date}}</p>
+    </div>
+    <div class="activity-right-container">
+        <p>button1</p>
+        <p>button2</p>
+        <p>button3</p>
+    </div>
+</div>
