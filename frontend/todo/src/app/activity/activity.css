@@ -3,29 +3,46 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border: solid #dee2e6 4px;
+    border: solid #dee2e6 2px;
     margin: 16px auto;
     max-width: 1300px;
     min-height: 156px;
     border-radius: 12px;
 }
 
-.activity-left-container {
-    margin: 0px 12px;
+.activity-description-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    row-gap: 12px;
+    margin: 18px;
 }
 
-.activity-right-container {
+.activity-action-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     column-gap: 12px;
-    margin: 0px 12px;
 }
 
 .button {
     background-color: #0084ff;
     color: white;
-    padding: 12px;
+    padding:10px;
     border-radius: 12px;
+}
+
+.general-info {
+    font-weight: 100;
+}
+
+.activity-name {
+    font-weight: 600;
+    font-size: 26px;
+}
+
+.description {
+    font-weight: 100;
 }
