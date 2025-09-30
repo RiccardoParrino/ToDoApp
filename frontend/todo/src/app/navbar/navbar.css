@@ -3,11 +3,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: lightgray;
+    background-color: white;
     height: 96px;
     margin: 0px auto;
     border-radius: 12px;
-    max-width: 1200px;
+    max-width: 1300px;
 }
 
 .left-navbar-container {
@@ -29,7 +29,7 @@
 }
 
 .button {
-    background-color: lightseagreen;
+    background-color: #0084ff;
     color: white;
     padding: 12px;
     border-radius: 12px;
