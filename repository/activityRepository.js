@@ -42,3 +42,16 @@ exports.updateActivity = async (name, newName) => {
         await client.close();
     }
 }
+
+exports.deleteActivity = async (name) => {
+    try {
+        await client.connect();
+        const db = client.db("temp");
+        const collection = db.collection("activity");
+
+        await collection.deleteOne({"name":name});
+        return;
+    } finally {
+        await client.close();
+    }
+}

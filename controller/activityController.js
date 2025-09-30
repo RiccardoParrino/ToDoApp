@@ -1,8 +1,6 @@
 const activityService = require('../service/activityService');
 
 exports.createActivity = async (req, res, next) => {
-    console.log("request");
-    console.log(req.query.name);
     await activityService.createActivity(req.query.name);
     res.send("DONE");
 }
@@ -18,6 +16,8 @@ exports.updateActivity = async (req, res, next) => {
     res.send("DONE");
 }
 
-exports.deleteActivity = (req, res, next) => {
-    activityService.deleteActivity(req);
+exports.deleteActivity = async (req, res, next) => {
+    const name = req.query.name;
+    await activityService.deleteActivity(name);
+    res.send("DONE");
 }

@@ -12,6 +12,6 @@ exports.updateActivity = (name, newName) => {
     return activityRepository.updateActivity(name, newName);
 }
 
-exports.deleteActivity = (id) => {
-    return "DELETE ACTIVITY";
+exports.deleteActivity = (name) => {
+    return activityRepository.deleteActivity(name);
 }
