@@ -21,5 +21,23 @@ export class Activity implements OnInit{
     this.activities.push(
       new ActivityModel("Clean PC", "Yesterday")
     );
+    this.activities.push(
+      new ActivityModel("Clean room", "today")
+    );
+    this.activities.push(
+      new ActivityModel("Clean car", "today")
+    );
+    this.activities.push(
+      new ActivityModel("Clean PC", "Yesterday")
+    );
+    this.activities.push(
+      new ActivityModel("Clean room", "today")
+    );
+    this.activities.push(
+      new ActivityModel("Clean car", "today")
+    );
+    this.activities.push(
+      new ActivityModel("Clean PC", "Yesterday")
+    );  
   }
 }
