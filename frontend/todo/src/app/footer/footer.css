@@ -1,0 +1,37 @@
+.footer {
+    background-color: #e9ecef;
+    margin-top: 196px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0px auto;
+    padding: 128px 0px;
+    width: 100%;
+}
+
+.right-footer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 16px;
+    width: 30%;
+}
+
+.left-footer-container {
+    width: 70%;
+}
+
+.footer-img {
+    width: 64px;
+}
+
+.footer-title-app {
+    font-size: 32px;
+    font-weight: 900;
+}
