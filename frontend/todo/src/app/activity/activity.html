@@ -1,12 +1,14 @@
-<div class="activity-container" *ngFor="let activity of activities">
-    <div class="activity-description-container">
-        <p class="general-info">Luogo : {{activity.date}}</p>
-        <p class="activity-name">{{activity.name}}</p>
-        <p class="description">{{activity.description}}</p>
-        <div class="activity-action-container">
-            <a class="button">Marked as done</a>
-            <a class="button">Open</a>
-            <a class="button">Remove</a>
+<div class="activity-list-container" *ngFor="let activity of activities">
+    <div class="activity-container">
+        <div class="activity-description-container">
+            <p class="general-info">Luogo : {{activity.date}}</p>
+            <p class="activity-name">{{activity.name}}</p>
+            <p class="description">{{activity.description}}</p>
+            <div class="activity-action-container">
+                <a class="button">Marked as done</a>
+                <a class="button">Open</a>
+                <a class="button">Remove</a>
+            </div>
         </div>
     </div>
 </div>

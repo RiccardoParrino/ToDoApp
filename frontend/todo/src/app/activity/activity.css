@@ -1,3 +1,7 @@
+.activity-list-container {
+    padding: 0px 16px;
+}
+
 .activity-container {
     display: flex;
     flex-direction: row;
@@ -33,7 +37,7 @@
 .button {
     background-color: #0084ff;
     color: white;
-    padding:10px;
+    padding: 10px 12px;
     border-radius: 12px;
 }
 
@@ -45,6 +49,7 @@
 .activity-name {
     font-weight: 600;
     font-size: 26px;
+    margin-bottom: -4px;
 }
 
 .description {
