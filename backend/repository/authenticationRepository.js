@@ -1,7 +1,6 @@
 exports.createUser = async () => {}
 
-exports.readUser = async (username) => {
-}
+exports.readUser = async () => {}
 
 exports.updateUser = async () => {}
 
