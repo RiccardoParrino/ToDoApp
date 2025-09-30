@@ -3,9 +3,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: grey;
+    background-color: lightgray;
     height: 96px;
-    margin: 0px 16px;
+    margin: 0px auto;
+    border-radius: 12px;
+    max-width: 1200px;
 }
 
 .left-navbar-container {
@@ -14,7 +16,7 @@
     align-items: center;
     justify-content: center;
     column-gap: 16px;
-    margin: 0px 16px;
+    margin: 0px 32px;
 }
 
 .right-navbar-container {
@@ -23,5 +25,12 @@
     align-items: center;
     justify-content: center;
     column-gap: 16px;
-    margin: 0px 16px;
+    margin: 0px 32px;
+}
+
+.button {
+    background-color: lightseagreen;
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
 }

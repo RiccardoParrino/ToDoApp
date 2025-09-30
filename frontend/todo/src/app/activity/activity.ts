@@ -13,31 +13,31 @@ export class Activity implements OnInit{
 
   ngOnInit(): void {
     this.activities.push(
-      new ActivityModel("Clean room", "today")
+      new ActivityModel("Clean room", "today", "description goes here")
     );
     this.activities.push(
-      new ActivityModel("Clean car", "today")
+      new ActivityModel("Clean car", "today", "description goes here")
     );
     this.activities.push(
-      new ActivityModel("Clean PC", "Yesterday")
+      new ActivityModel("Clean PC", "Yesterday", "description goes here")
     );
     this.activities.push(
-      new ActivityModel("Clean room", "today")
+      new ActivityModel("Clean room", "today", "description goes here")
     );
     this.activities.push(
-      new ActivityModel("Clean car", "today")
+      new ActivityModel("Clean car", "today", "description goes here")
     );
     this.activities.push(
-      new ActivityModel("Clean PC", "Yesterday")
+      new ActivityModel("Clean PC", "Yesterday", "description goes here")
     );
     this.activities.push(
-      new ActivityModel("Clean room", "today")
+      new ActivityModel("Clean room", "today", "description goes here")
     );
     this.activities.push(
-      new ActivityModel("Clean car", "today")
+      new ActivityModel("Clean car", "today", "description goes here")
     );
     this.activities.push(
-      new ActivityModel("Clean PC", "Yesterday")
+      new ActivityModel("Clean PC", "Yesterday", "description goes here")
     );  
   }
 }

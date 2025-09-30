@@ -3,7 +3,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 32px;
+    margin: 32px;
+    margin-bottom: 64px;
 }
 
 h1 {
