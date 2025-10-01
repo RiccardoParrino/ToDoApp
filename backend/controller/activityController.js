@@ -1,17 +1,13 @@
 const activityService = require('../service/activityService');
 
 exports.createActivity = async (req, res, next) => {
-    console.log(req.body.name);
-    console.log(req.body.date);
-    console.log(req.body.description);
-    console.log(req.body.city);
     await activityService.createActivity(
         req.body.name,
         req.body.date,
         req.body.description,
         req.body.city
     );
-    res.send("DONE");
+    res.send(true);
 }
 
 exports.readActivity = async (req, res, next) => {

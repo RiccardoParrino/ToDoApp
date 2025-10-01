@@ -29,7 +29,10 @@ export class CreateActivity {
         description:data.description,
         city:"todo"
       };
-      this.activityService.createActivity(newActivity);
+      console.log(newActivity);
+      this.activityService.createActivity(newActivity).subscribe ( data => {
+        console.log("Operazione riuscita!");
+      } );
     }
     this.showModal = false;
   }

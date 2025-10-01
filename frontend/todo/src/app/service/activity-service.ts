@@ -20,12 +20,8 @@ export class ActivityService {
   }
 
   createActivity(newActivity:ActivityDTO) : Observable<Boolean> {
-    const params = new HttpParams()
-      .set('name', newActivity.name)
-      .set('description', newActivity.description)
-      .set('date', newActivity.date)
-      .set('city', newActivity.city);
-    return this.http.post<Boolean>(this.createEndpoint, {params});
+    console.log(newActivity);
+    return this.http.post<Boolean>(this.createEndpoint, newActivity);
   }
 
   updateActivity(newActivity:ActivityDTO) : Observable<Boolean> {

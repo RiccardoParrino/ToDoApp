@@ -15,14 +15,18 @@ export class Activity implements OnInit{
   constructor(private activityService:ActivityService) {}
 
   ngOnInit(): void {
+    this.readActivities();
+  }
+
+  private readActivities() : void {
     this.activities = [];
     this.activityService.readActivity().subscribe( data => {
-      data.forEach ( a => new ActivityModel(
+      data.forEach ( a => this.activities.push(new ActivityModel(
         a.name,
         a.date,
         a.description,
         a.city
-      ));
+      )));
     });
   }
 }
