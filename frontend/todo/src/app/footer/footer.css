@@ -10,7 +10,7 @@
     align-items: center;
     max-width: 1200px;
     margin: 0px auto;
-    padding: 128px 0px;
+    padding: 96px 0px;
     width: 100%;
 }
 
@@ -19,7 +19,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    row-gap: 14px;
+    row-gap: 32px;
     width: 60%;
 }
 
@@ -29,11 +29,19 @@
     font-weight: 400;
 }
 
+.last-row-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    row-gap: 20px;
+}
+
 .left-footer-container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     column-gap: 16px;
     width: 40%;
 }
