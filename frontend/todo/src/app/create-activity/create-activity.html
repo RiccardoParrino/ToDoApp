@@ -5,7 +5,4 @@
     </div>
 </div>
 
-<app-create-activity-modal
-    *ngIf="showModal"
-    (close)="closeModal()">
-</app-create-activity-modal>
+<app-create-activity-modal *ngIf="showModal" (close)="saveOnCloseModal($event)"></app-create-activity-modal>

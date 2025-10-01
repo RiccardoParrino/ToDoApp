@@ -25,7 +25,7 @@ export class ActivityService {
       .set('description', newActivity.description)
       .set('date', newActivity.date)
       .set('city', newActivity.city);
-    return this.http.get<Boolean>(this.createEndpoint, {params});
+    return this.http.post<Boolean>(this.createEndpoint, {params});
   }
 
   updateActivity(newActivity:ActivityDTO) : Observable<Boolean> {

@@ -15,32 +15,14 @@ export class Activity implements OnInit{
   constructor(private activityService:ActivityService) {}
 
   ngOnInit(): void {
-    this.activities.push(
-      new ActivityModel("Clean room", "today", "description goes here")
-    );
-    this.activities.push(
-      new ActivityModel("Clean car", "today", "description goes here")
-    );
-    this.activities.push(
-      new ActivityModel("Clean PC", "Yesterday", "description goes here")
-    );
-    this.activities.push(
-      new ActivityModel("Clean room", "today", "description goes here")
-    );
-    this.activities.push(
-      new ActivityModel("Clean car", "today", "description goes here")
-    );
-    this.activities.push(
-      new ActivityModel("Clean PC", "Yesterday", "description goes here")
-    );
-    this.activities.push(
-      new ActivityModel("Clean room", "today", "description goes here")
-    );
-    this.activities.push(
-      new ActivityModel("Clean car", "today", "description goes here")
-    );
-    this.activities.push(
-      new ActivityModel("Clean PC", "Yesterday", "description goes here")
-    );  
+    this.activities = [];
+    this.activityService.readActivity().subscribe( data => {
+      data.forEach ( a => new ActivityModel(
+        a.name,
+        a.date,
+        a.description,
+        a.city
+      ));
+    });
   }
 }
