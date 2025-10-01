@@ -8,7 +8,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0px auto;
     padding: 128px 0px;
     width: 100%;
@@ -16,15 +16,26 @@
 
 .right-footer-container {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    row-gap: 14px;
+    width: 60%;
+}
+
+.right-footer-container p {
+    font-size: 18px;
+    color: #adb5bd;
+    font-weight: 400;
+}
+
+.left-footer-container {
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     column-gap: 16px;
-    width: 30%;
-}
-
-.left-footer-container {
-    width: 70%;
+    width: 40%;
 }
 
 .footer-img {
