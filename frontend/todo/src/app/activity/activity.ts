@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivityModel } from '../model/ActivityModel';
 import { CommonModule } from '@angular/common';
+import { ActivityService } from '../service/activity-service';
 
 @Component({
   selector: 'app-activity',
@@ -10,6 +11,8 @@ import { CommonModule } from '@angular/common';
 })
 export class Activity implements OnInit{
   activities: ActivityModel[] = [];
+
+  constructor(private activityService:ActivityService) {}
 
   ngOnInit(): void {
     this.activities.push(
