@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-create-activity-modal',
@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './create-activity-modal.css'
 })
 export class CreateActivityModal {
+  @Output() close = new EventEmitter<void>();
 
+  onClose() {
+    this.close.emit();
+  }
 }
