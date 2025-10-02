@@ -41,10 +41,6 @@ exports.loginUser = async (email, password) => {
     }
 }
 
-// exports.readUser = async () => {}
-
-// exports.updateUser = async () => {}
-
 exports.deleteUser = async (email) => {
     try {
         console.log(email);
