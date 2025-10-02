@@ -12,7 +12,8 @@ exports.createUser = async (req, res, next) => {
 exports.loginUser = async (req, res, next) => {
     const email = req.body.email;
     const password = req.body.password;
-    const logged = authenticationService.loginUser(email, password);
+    const logged = await authenticationService.loginUser(email, password);
+    console.log(logged);
     if (logged) {
         res.send(jwtUtilities.createJwt());
     } else {

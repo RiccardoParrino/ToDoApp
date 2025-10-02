@@ -16,7 +16,7 @@ exports.deleteUser = (email) => {
     return authenticationRepository.deleteUser(email);
 }
 
-exports.loginUser = (email, password) => {
+exports.loginUser = async (email, password) => {
     return authenticationRepository.loginUser(email, password);
 }
 
