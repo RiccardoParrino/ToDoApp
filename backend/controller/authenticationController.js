@@ -33,3 +33,9 @@ exports.deleteUser = async (req, res, next) => {
     res.send("DONE");
     return;
 }
+
+exports.loginUser = async (req, res, next) => {
+    const email = req.body.email;
+    const password = req.body.password;
+    res.send(await authenticationService.loginUser(email, password));
+}

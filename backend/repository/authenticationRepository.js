@@ -1,4 +1,46 @@
-exports.createUser = async () => {}
+const MongoDbConfig = require('../config/MongoDBConfig');
+const {MongoClient} = require('mongodb');
+const uri = MongoDbConfig.uri;
+const client = new MongoClient(uri);
+
+//docker run -it mongo mongosh "mongodb://admin:admin@localhost:27017"
+//db.users.insertOne({"email":"riccardo@gmail.com", "password":"ric", "name":"riccardo", "surname":"parrino"})
+
+exports.createUser = async (email, password, name, surname) => {
+    try {
+        await client.connect();
+        const db = client.db("temp");
+        const collection = db.collection("users");
+
+        await collection.insertOne(
+            {
+                "email":email,
+                "password":password,
+                "name":name,
+                "surname":surname
+            }
+        );
+
+        return;
+    } finally {
+        await client.close();
+    }
+}
+
+exports.loginUser = async (email, password) => {
+    try {
+        await client.connect();
+        const db = client.db("temp");
+        const collection = db.collection("users");
+
+        const userTrial = await collection.findOne({"email":email});
+        if ( userTrial !== null && userTrial.password == password )
+            return true;
+        return false;
+    } finally {
+        await client.close();
+    }
+}
 
 exports.readUser = async () => {}
 

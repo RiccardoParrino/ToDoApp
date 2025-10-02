@@ -20,7 +20,6 @@ export class ActivityService {
   }
 
   createActivity(newActivity:ActivityDTO) : Observable<Boolean> {
-    console.log(newActivity);
     return this.http.post<Boolean>(this.createEndpoint, newActivity);
   }
 

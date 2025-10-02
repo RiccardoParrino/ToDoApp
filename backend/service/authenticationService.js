@@ -1,7 +1,7 @@
 const authenticationRepository = require("../repository/authenticationRepository");
 
-exports.createUser = (username, password, name, surname) => {
-    authenticationRepository.createUser(username, password, name, surname);
+exports.createUser = (email, password, name, surname) => {
+    authenticationRepository.createUser(email, password, name, surname);
 }
 
 exports.readUser = (username) => {
@@ -14,4 +14,8 @@ exports.updateUser = (username, password, name, surname) => {
 
 exports.deleteUser = (username) => {
     authenticationRepository.deleteUser(username);
+}
+
+exports.loginUser = (email, password) => {
+    return authenticationRepository.loginUser(email, password);
 }
