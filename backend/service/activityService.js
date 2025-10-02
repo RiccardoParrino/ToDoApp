@@ -4,8 +4,8 @@ exports.createActivity = (author, name, date, description, city) => {
     activityRepository.createActivity(author, name, date, description, city);
 }
 
-exports.findAll = () => {
-    return activityRepository.findAll();
+exports.findAll = (author) => {
+    return activityRepository.findAll(author);
 }
 
 exports.updateActivity = (name, newName, newDate, newDescription, newCity) => {

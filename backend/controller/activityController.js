@@ -1,8 +1,10 @@
 const activityService = require('../service/activityService');
+const jwtUtilities = require('../middleware/jwtUtilities');
 
 exports.createActivity = async (req, res, next) => {
+    const authorEmail = await jwtUtilities.extractEmailFromJwt(req);
     await activityService.createActivity(
-        req.body.author,
+        authorEmail,
         req.body.name,
         req.body.date,
         req.body.description,
@@ -12,7 +14,8 @@ exports.createActivity = async (req, res, next) => {
 }
 
 exports.findAll = async (req, res, next) => {
-    res.send(await activityService.findAll());
+    const authorEmail = await jwtUtilities.extractEmailFromJwt(req);
+    res.send(await activityService.findAll(authorEmail));
 }
 
 exports.updateActivity = async (req, res, next) => {
