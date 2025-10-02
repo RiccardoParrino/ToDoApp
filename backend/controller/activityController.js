@@ -2,6 +2,7 @@ const activityService = require('../service/activityService');
 
 exports.createActivity = async (req, res, next) => {
     await activityService.createActivity(
+        req.body.author,
         req.body.name,
         req.body.date,
         req.body.description,

@@ -1,7 +1,7 @@
 const activityRepository = require('../repository/activityRepository')
 
-exports.createActivity = (name, date, description, city) => {
-    activityRepository.createActivity(name, date, description, city);
+exports.createActivity = (author, name, date, description, city) => {
+    activityRepository.createActivity(author, name, date, description, city);
 }
 
 exports.findAll = () => {

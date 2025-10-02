@@ -17,7 +17,7 @@ exports.findAll = async () => {
     }
 }
 
-exports.createActivity = async (name, date, description, city) => {
+exports.createActivity = async (author, name, date, description, city) => {
     try {
         await client.connect();
         const db = client.db("temp");
@@ -25,6 +25,7 @@ exports.createActivity = async (name, date, description, city) => {
 
         await collection.insertOne(
             {
+                "author":author,
                 "name":name,
                 "date":date,
                 "description":description,
