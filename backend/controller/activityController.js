@@ -1,8 +1,12 @@
 const activityService = require('../service/activityService');
+const jwtUtilities = require('../middleware/jwtUtilities');
 
 exports.createActivity = async (req, res, next) => {
+    const authorEmail = await jwtUtilities.extractEmailFromJwt(req);
+    console.log('Siamo in activity controller');
+    console.log(authorEmail);
     await activityService.createActivity(
-        req.body.author,
+        authorEmail,
         req.body.name,
         req.body.date,
         req.body.description,

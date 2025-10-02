@@ -15,7 +15,7 @@ exports.loginUser = async (req, res, next) => {
     const logged = await authenticationService.loginUser(email, password);
     console.log(logged);
     if (logged) {
-        res.send(jwtUtilities.createJwt());
+        res.send(jwtUtilities.createJwt(email));
     } else {
         res.sendStatus(401);
     }
