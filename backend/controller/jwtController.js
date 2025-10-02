@@ -2,9 +2,9 @@ const jwtService = require("../service/jwtService")
 
 exports.createJwt = async (req, res, next) => {
     console.log("sono qui");
-    return await jwtService.createJwt(req.query.email);
+    res.send(await jwtService.createJwt(req.query.email));
 }
 
 exports.verifyJwt = (req, res, next) => {
-    return jwtService.verifyJwt();
+    res.send(jwtService.verifyJwt(req.query.token));
 }

@@ -12,7 +12,7 @@ exports.createJwt = async (email) => {
 }
 
 exports.verifyJwt = (token) => {
-    jwt.verify( token, process.env.JWT_SECRET_KEY, (err, decoded) => {
+    jwt.verify( token, "mySecret", (err, decoded) => {
         if (err) {
             console.log("Error occurred in JWT");
             return false;
