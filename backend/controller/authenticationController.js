@@ -8,22 +8,22 @@ exports.createUser = async (req, res, next) => {
     res.send(await authenticationService.createUser(email, password, name, surname));
 }
 
-exports.readUser = async (req, res, next) => {
-    const username = req.query.username;
-    const results = await authenticationService.readUser(username);
-    console.log(results);
-    res.json(results);
-}
+// exports.readUser = async (req, res, next) => {
+//     const username = req.query.username;
+//     const results = await authenticationService.readUser(username);
+//     console.log(results);
+//     res.json(results);
+// }
 
-exports.updateUser = async (req, res, next) => {
-    const username = req.query.username;
-    const password = req.query.password;
-    const name = req.query.name;
-    const surname = req.query.surname;
-    await authenticationService.updateUser(username, password, name, surname);
-    res.send("DONE");
-    return;
-}
+// exports.updateUser = async (req, res, next) => {
+//     const username = req.query.username;
+//     const password = req.query.password;
+//     const name = req.query.name;
+//     const surname = req.query.surname;
+//     await authenticationService.updateUser(username, password, name, surname);
+//     res.send("DONE");
+//     return;
+// }
 
 exports.deleteUser = async (req, res, next) => {
     const email = req.body.email;

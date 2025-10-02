@@ -4,13 +4,13 @@ exports.createUser = (email, password, name, surname) => {
     return authenticationRepository.createUser(email, password, name, surname);
 }
 
-exports.readUser = (username) => {
-    return authenticationRepository.readUser(username);
-}
+// exports.readUser = (username) => {
+//     return authenticationRepository.readUser(username);
+// }
 
-exports.updateUser = (username, password, name, surname) => {
-    authenticationRepository.updateUser(username);
-}
+// exports.updateUser = (username, password, name, surname) => {
+//     authenticationRepository.updateUser(username);
+// }
 
 exports.deleteUser = (email) => {
     return authenticationRepository.deleteUser(email);

@@ -43,9 +43,9 @@ exports.loginUser = async (email, password) => {
     }
 }
 
-exports.readUser = async () => {}
+// exports.readUser = async () => {}
 
-exports.updateUser = async () => {}
+// exports.updateUser = async () => {}
 
 exports.deleteUser = async (email) => {
     try {
