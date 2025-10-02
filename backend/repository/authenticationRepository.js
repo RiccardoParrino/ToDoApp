@@ -12,7 +12,7 @@ exports.createUser = async (email, password, name, surname) => {
         const db = client.db("temp");
         const collection = db.collection("users");
 
-        await collection.insertOne(
+        const res = await collection.insertOne(
             {
                 "email":email,
                 "password":password,
@@ -21,7 +21,9 @@ exports.createUser = async (email, password, name, surname) => {
             }
         );
 
-        return;
+        console.log(res);
+
+        return true;
     } finally {
         await client.close();
     }
