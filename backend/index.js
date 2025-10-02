@@ -9,9 +9,11 @@ app.use(express.json());
 
 const activityRoutes = require('./routes/activityRoutes');
 const authenticationRoutes = require('./routes/authenticationRoutes');
+const jwtRoutes = require('./routes/jwtRoutes');
 
 app.use('/auth',authenticationRoutes);
 app.use('/activity',activityRoutes);
+app.use('/jwt',jwtRoutes);
 
 app.listen(port, () => {
     console.log("Server listening at port 8080");
