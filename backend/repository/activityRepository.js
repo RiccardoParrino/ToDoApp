@@ -41,14 +41,16 @@ exports.updateActivity = async (name, newName, newDate, newDescr, newCity) => {
         await client.connect();
         const db = client.db("temp");
         const collection = db.collection("activity");
-        const oldActivity = await collection.find({"name":name});
+        const oldActivity = await collection.findOne({"name":name});
+        console.log(name);
+        console.log(newName !== undefined ? newName : oldActivity.name);
 
         await collection.updateOne( {"name":name}, 
             { $set: {
-                "name":newName !== null || newName !== undefined ? newName : oldActivity.name, 
-                "date":newDate !== null || newDate !== undefined ? newDate : oldActivity.newDate,
-                "description":newDescr !== null || newDescr !== undefined ? newDescr : oldActivity.newDescription,
-                "city":newCity !== null || newCity !== undefined ? newCity : oldActivity.newCity
+                "name":newName !== undefined ? newName : oldActivity.name,
+                "date":newDate !== undefined ? newDate : oldActivity.date,
+                "description":newDescr !== undefined ? newDescr : oldActivity.description,
+                "city":newCity !== undefined ? newCity : oldActivity.city
             } 
         });
         return;

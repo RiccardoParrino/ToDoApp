@@ -15,11 +15,11 @@ exports.findAll = async (req, res, next) => {
 }
 
 exports.updateActivity = async (req, res, next) => {
-    const name = req.query.name;
-    const newName = req.query.newName;
-    const newDate = req.query.newDate;
-    const newDescription = req.query.newDescription;
-    const newCity = req.query.newCity;
+    const name = req.body.name;
+    const newName = req.body.newName;
+    const newDate = req.body.newDate;
+    const newDescription = req.body.newDescription;
+    const newCity = req.body.newCity;
     await activityService.updateActivity(name, newName, newDate, newDescription, newCity);
     res.send("DONE");
 }
