@@ -18,13 +18,11 @@ exports.verifyJwt = (req, res, next) => {
     jwt.verify( token, process.env.JWT_SECRET_KEY, (err, decoded) => {
         if (err) {
             console.log("Error occurred in JWT");
-            return false;
+            res.sendStatus(401);
         } else {
             console.log("JWT is valid");
             console.log(decoded.userId);
-            return true;
+            next();
         }
     });
-    
-    next();
 }
