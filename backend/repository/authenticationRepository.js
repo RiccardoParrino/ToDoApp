@@ -11,7 +11,6 @@ exports.createUser = async (email, password, name, surname) => {
         await client.connect();
         const db = client.db("temp");
         const collection = db.collection("users");
-
         const res = await collection.insertOne(
             {
                 "email":email,
@@ -61,14 +60,13 @@ exports.deleteUser = async (email) => {
     }
 }
 
-exports.listAllUser = async () => {
+exports.listAllUsers = async () => {
     try {
-        console.log(email);
         await client.connect();
         const db = client.db("temp");
         const collection = db.collection("users");
-        const res = await collection.deleteOne({"email":email});
-        return true;
+        const res = await collection.find().toArray();
+        return res;
     } finally {
         await client.close();
     }

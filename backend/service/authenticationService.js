@@ -19,3 +19,7 @@ exports.deleteUser = (email) => {
 exports.loginUser = (email, password) => {
     return authenticationRepository.loginUser(email, password);
 }
+
+exports.listAllUsers = () => {
+    return authenticationRepository.listAllUsers();
+}
