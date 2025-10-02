@@ -41,7 +41,7 @@ exports.updateActivity = async (name, newName, newDate, newDescr, newCity) => {
         await client.connect();
         const db = client.db("temp");
         const collection = db.collection("activity");
-        const oldActivity = await db.collection.findOne({"name":name});
+        const oldActivity = await collection.find({"name":name});
 
         await collection.updateOne( {"name":name}, 
             { $set: {
@@ -64,6 +64,19 @@ exports.deleteActivity = async (name) => {
         const collection = db.collection("activity");
 
         await collection.deleteOne({"name":name});
+        return;
+    } finally {
+        await client.close();
+    }
+}
+
+exports.removeAll = async () => {
+    try {
+        await client.connect();
+        const db = client.db("temp");
+        const collection = db.collection("activity");
+
+        await collection.deleteMany({});
         return;
     } finally {
         await client.close();

@@ -15,3 +15,7 @@ exports.updateActivity = (name, newName, newDate, newDescription, newCity) => {
 exports.deleteActivity = (name) => {
     return activityRepository.deleteActivity(name);
 }
+
+exports.removeAll = () => {
+    return activityRepository.removeAll();
+}

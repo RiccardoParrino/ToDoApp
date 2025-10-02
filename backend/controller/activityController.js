@@ -29,3 +29,8 @@ exports.deleteActivity = async (req, res, next) => {
     await activityService.deleteActivity(name);
     res.send("DONE");
 }
+
+exports.removeAll = async (req, res, next) => {
+    await activityService.removeAll();
+    res.send("DONE");
+}

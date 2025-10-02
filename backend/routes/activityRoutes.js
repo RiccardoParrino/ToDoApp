@@ -8,5 +8,6 @@ router.post("/createActivity", activityController.createActivity);
 router.get("/findAll", activityController.findAll);
 router.post("/updateActivity", activityController.updateActivity);
 router.get("/deleteActivity", activityController.deleteActivity);
+router.get("/removeAll", activityController.removeAll)
 
 module.exports = router;
