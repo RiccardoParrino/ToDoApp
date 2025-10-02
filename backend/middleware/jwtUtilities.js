@@ -15,16 +15,16 @@ exports.verifyJwt = (req, res, next) => {
     const authHeader = req.headers['authorization']
     const token = authHeader && authHeader.split(' ')[1];
 
-    // jwt.verify( token, process.env.JWT_SECRET_KEY, (err, decoded) => {
-    //     if (err) {
-    //         console.log("Error occurred in JWT");
-    //         return false;
-    //     } else {
-    //         console.log("JWT is valid");
-    //         console.log(decoded.userId);
-    //         return true;
-    //     }
-    // });
+    jwt.verify( token, process.env.JWT_SECRET_KEY, (err, decoded) => {
+        if (err) {
+            console.log("Error occurred in JWT");
+            return false;
+        } else {
+            console.log("JWT is valid");
+            console.log(decoded.userId);
+            return true;
+        }
+    });
     
     next();
 }
