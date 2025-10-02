@@ -1,4 +1,5 @@
 const authenticationService = require("../service/authenticationService");
+const jwtUtilities = require('../middleware/jwtUtilities');
 
 exports.createUser = async (req, res, next) => {
     const email = req.body.email;
@@ -33,7 +34,12 @@ exports.deleteUser = async (req, res, next) => {
 exports.loginUser = async (req, res, next) => {
     const email = req.body.email;
     const password = req.body.password;
-    res.send(await authenticationService.loginUser(email, password));
+    const logged = authenticationService.loginUser(email, password);
+    if (logged) {
+        res.send(jwtUtilities.createJwt());
+    } else {
+        res.sendStatus(401);
+    }
 }
 
 exports.listAllUsers = async (req, res, next) => {
