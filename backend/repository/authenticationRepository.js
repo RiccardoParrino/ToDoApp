@@ -48,4 +48,28 @@ exports.readUser = async () => {}
 
 exports.updateUser = async () => {}
 
-exports.deleteUser = async () => {}
+exports.deleteUser = async (email) => {
+    try {
+        console.log(email);
+        await client.connect();
+        const db = client.db("temp");
+        const collection = db.collection("users");
+        const res = await collection.deleteOne({"email":email});
+        return true;
+    } finally {
+        await client.close();
+    }
+}
+
+exports.listAllUser = async () => {
+    try {
+        console.log(email);
+        await client.connect();
+        const db = client.db("temp");
+        const collection = db.collection("users");
+        const res = await collection.deleteOne({"email":email});
+        return true;
+    } finally {
+        await client.close();
+    }
+}

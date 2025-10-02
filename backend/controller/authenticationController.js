@@ -26,10 +26,8 @@ exports.updateUser = async (req, res, next) => {
 }
 
 exports.deleteUser = async (req, res, next) => {
-    const username = req.query.username;
-    await authenticationService.deleteUser(username);
-    res.send("DONE");
-    return;
+    const email = req.body.email;
+    res.send(await authenticationService.deleteUser(email));
 }
 
 exports.loginUser = async (req, res, next) => {

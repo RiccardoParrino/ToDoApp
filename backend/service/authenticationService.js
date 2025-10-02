@@ -12,8 +12,8 @@ exports.updateUser = (username, password, name, surname) => {
     authenticationRepository.updateUser(username);
 }
 
-exports.deleteUser = (username) => {
-    authenticationRepository.deleteUser(username);
+exports.deleteUser = (email) => {
+    return authenticationRepository.deleteUser(email);
 }
 
 exports.loginUser = (email, password) => {
