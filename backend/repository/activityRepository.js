@@ -3,7 +3,7 @@ const {MongoClient} = require('mongodb');
 const uri = MongoDbConfig.uri;
 const client = new MongoClient(uri);
 
-exports.readActivity = async () => {
+exports.findAll = async () => {
     try {
         await client.connect();
         const db = client.db("temp");
@@ -36,13 +36,21 @@ exports.createActivity = async (name, date, description, city) => {
     }
 }
 
-exports.updateActivity = async (name, newName) => {
+exports.updateActivity = async (name, newName, newDate, newDescr, newCity) => {
     try {
         await client.connect();
         const db = client.db("temp");
         const collection = db.collection("activity");
+        const oldActivity = await db.collection.findOne({"name":name});
 
-        await collection.updateOne( {"name":name}, { $set: {"name":newName} } );
+        await collection.updateOne( {"name":name}, 
+            { $set: {
+                "name":newName !== null || newName !== undefined ? newName : oldActivity.name, 
+                "date":newDate !== null || newDate !== undefined ? newDate : oldActivity.newDate,
+                "description":newDescr !== null || newDescr !== undefined ? newDescr : oldActivity.newDescription,
+                "city":newCity !== null || newCity !== undefined ? newCity : oldActivity.newCity
+            } 
+        });
         return;
     } finally {
         await client.close();

@@ -4,12 +4,12 @@ exports.createActivity = (name, date, description, city) => {
     activityRepository.createActivity(name, date, description, city);
 }
 
-exports.readActivity = () => {
-    return activityRepository.readActivity();
+exports.findAll = () => {
+    return activityRepository.findAll();
 }
 
-exports.updateActivity = (name, newName) => {
-    return activityRepository.updateActivity(name, newName);
+exports.updateActivity = (name, newName, newDate, newDescription, newCity) => {
+    return activityRepository.updateActivity(name, newName, newDate, newDescription, newCity);
 }
 
 exports.deleteActivity = (name) => {

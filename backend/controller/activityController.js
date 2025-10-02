@@ -10,14 +10,17 @@ exports.createActivity = async (req, res, next) => {
     res.send(true);
 }
 
-exports.readActivity = async (req, res, next) => {
-    res.send(await activityService.readActivity());
+exports.findAll = async (req, res, next) => {
+    res.send(await activityService.findAll());
 }
 
 exports.updateActivity = async (req, res, next) => {
     const name = req.query.name;
     const newName = req.query.newName;
-    await activityService.updateActivity(name, newName);
+    const newDate = req.query.newDate;
+    const newDescription = req.query.newDescription;
+    const newCity = req.query.newCity;
+    await activityService.updateActivity(name, newName, newDate, newDescription, newCity);
     res.send("DONE");
 }
 

@@ -20,8 +20,6 @@ exports.createUser = async (email, password, name, surname) => {
             }
         );
 
-        console.log(res);
-
         return true;
     } finally {
         await client.close();
