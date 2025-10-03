@@ -20,9 +20,7 @@ export class Login {
     console.log(this.email);
     console.log(this.password);
     this.loginService.login(this.email, this.password).subscribe( response => {
-      if (response) {
-        this.isLoggedIn = true;
-      }
+      console.log(response.token);
     });
   }
 

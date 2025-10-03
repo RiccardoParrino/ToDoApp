@@ -3,7 +3,6 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 exports.createJwt = (email) => {
-    console.log(email);
     const token = jwt.sign(
         { userId: email }, 
         process.env.JWT_SECRET_KEY, 
