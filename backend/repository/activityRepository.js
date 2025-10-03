@@ -31,7 +31,7 @@ exports.createActivity = async (author, name, date, description, city) => {
                 "description":description,
                 "city":city
             });
-        return;
+        return true;
     } finally {
         await client.close();
     }
