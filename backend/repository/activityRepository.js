@@ -54,7 +54,7 @@ exports.updateActivity = async (name, newName, newDate, newDescr, newCity) => {
                 "city":newCity !== undefined ? newCity : oldActivity.city
             } 
         });
-        return;
+        return true;
     } finally {
         await client.close();
     }

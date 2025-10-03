@@ -23,8 +23,7 @@ exports.updateActivity = async (req, res, next) => {
     const newDate = req.body.newDate;
     const newDescription = req.body.newDescription;
     const newCity = req.body.newCity;
-    await activityService.updateActivity(name, newName, newDate, newDescription, newCity);
-    res.send("DONE");
+    res.send(await activityService.updateActivity(name, newName, newDate, newDescription, newCity));
 }
 
 exports.deleteActivity = async (req, res, next) => {

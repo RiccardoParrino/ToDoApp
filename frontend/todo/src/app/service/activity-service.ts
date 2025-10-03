@@ -10,7 +10,7 @@ export class ActivityService {
   
   createEndpoint:string = "http://localhost:8080/activity/createActivity";
   readEndpoint:string = "http://localhost:8080/activity/findAll";
-  updateEndpoint:string = "http://localhost:8080/activity/udpateActivity";
+  updateEndpoint:string = "http://localhost:8080/activity/updateActivity";
   deleteEndpoint:string = "http://localhost:8080/activity/deleteActivity";
 
   private messageSource = new Subject<boolean>();
@@ -27,18 +27,12 @@ export class ActivityService {
   }
 
   updateActivity(newActivity:any) : Observable<Boolean> {
-    const params = new HttpParams()
-      .set('name', newActivity.name)
-      .set('newName', newActivity.newName)
-      .set('newDescription', newActivity.newDescription)
-      .set('newDate', newActivity.newDate)
-      .set('newCity', newActivity.newCity);
     // const name = req.body.name;
     // const newName = req.body.newName;
     // const newDate = req.body.newDate;
     // const newDescription = req.body.newDescription;
     // const newCity = req.body.newCity;
-    return this.http.post<Boolean>(this.updateEndpoint, params);
+    return this.http.post<Boolean>(this.updateEndpoint, newActivity);
   }
 
   deleteActivity(name:string) : Observable<any> {

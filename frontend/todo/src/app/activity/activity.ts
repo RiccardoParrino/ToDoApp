@@ -65,7 +65,6 @@ export class Activity implements OnInit{
     this.currentSelectedActivityName = '';
     this.currentSelectedActivityDescription = '';
     this.showUpdateModal = false;
-    // this.activityService.updateActivity()
   }
 
   protected removeActivity(activityName: string) : void {
