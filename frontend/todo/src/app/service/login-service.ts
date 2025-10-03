@@ -20,4 +20,15 @@ export class LoginService {
     return this.http.post<LoginDTO>(this.loginEndpoint, params);
   }
 
+  getAccessToken() : string | null {
+    return localStorage.getItem('todolist-access-token');
+  }
+
+  storeAccessToken(token:string) : void {
+    localStorage.setItem('todolist-access-token', token);
+  }
+
+  isLogged() : boolean {
+    return localStorage.getItem('todolist-access-token') !== undefined;
+  }
 }
