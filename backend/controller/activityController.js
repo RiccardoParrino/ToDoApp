@@ -30,8 +30,7 @@ exports.updateActivity = async (req, res, next) => {
 
 exports.deleteActivity = async (req, res, next) => {
     const name = req.query.name;
-    await activityService.deleteActivity(name);
-    res.send("DONE");
+    res.send(await activityService.deleteActivity(name));
 }
 
 exports.removeAll = async (req, res, next) => {

@@ -67,7 +67,7 @@ exports.deleteActivity = async (name) => {
         const collection = db.collection("activity");
 
         await collection.deleteOne({"name":name});
-        return;
+        return true;
     } finally {
         await client.close();
     }

@@ -35,10 +35,10 @@ export class ActivityService {
     return this.http.get<Boolean>(this.updateEndpoint);
   }
 
-  deleteActivity(name:string) : Observable<Boolean> {
+  deleteActivity(name:string) : Observable<any> {
     const params = new HttpParams()
       .set('name', name);
-    return this.http.get<Boolean>(this.deleteEndpoint, {params});
+    return this.http.get<any>(this.deleteEndpoint, {params});
   }
 
   sendMessage(message: boolean) {

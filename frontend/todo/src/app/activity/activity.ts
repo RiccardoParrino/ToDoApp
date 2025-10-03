@@ -32,4 +32,16 @@ export class Activity implements OnInit{
       )));
     });
   }
+
+  protected openActivity(activityName: string, activityDescription: string) : void {
+    console.log(activityName);
+    console.log(activityDescription);
+  }
+
+  protected removeActivity(activityName: string) : void {
+    this.activityService.deleteActivity(activityName).subscribe( response => {
+      console.log("Activity deleted successfully");
+      this.readActivities();
+    } );
+  }
 }
