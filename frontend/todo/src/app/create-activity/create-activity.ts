@@ -32,6 +32,7 @@ export class CreateActivity {
       console.log(newActivity);
       this.activityService.createActivity(newActivity).subscribe ( data => {
         console.log("Operazione riuscita!");
+        this.activityService.sendMessage(true);
       } );
     }
     this.showModal = false;

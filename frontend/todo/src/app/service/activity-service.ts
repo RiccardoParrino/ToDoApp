@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { ActivityDTO } from '../dto/activity.dto';
 
 @Injectable({
@@ -9,9 +9,12 @@ import { ActivityDTO } from '../dto/activity.dto';
 export class ActivityService {
   
   createEndpoint:string = "http://localhost:8080/activity/createActivity";
-  readEndpoint:string = "http://localhost:8080/activity/readActivity";
+  readEndpoint:string = "http://localhost:8080/activity/findAll";
   updateEndpoint:string = "http://localhost:8080/activity/udpateActivity";
   deleteEndpoint:string = "http://localhost:8080/activity/deleteActivity";
+
+  private messageSource = new Subject<boolean>();
+  message$ = this.messageSource.asObservable();
 
   constructor (private http:HttpClient) {}
 
@@ -36,6 +39,10 @@ export class ActivityService {
     const params = new HttpParams()
       .set('name', name);
     return this.http.get<Boolean>(this.deleteEndpoint, {params});
+  }
+
+  sendMessage(message: boolean) {
+    this.messageSource.next(message);
   }
 
 }

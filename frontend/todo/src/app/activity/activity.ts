@@ -16,6 +16,9 @@ export class Activity implements OnInit{
 
   ngOnInit(): void {
     this.readActivities();
+    this.activityService.message$.subscribe(message => {
+      this.readActivities();
+    })
   }
 
   private readActivities() : void {

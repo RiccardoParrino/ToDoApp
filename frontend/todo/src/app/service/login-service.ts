@@ -31,4 +31,8 @@ export class LoginService {
   isLogged() : boolean {
     return localStorage.getItem('todolist-access-token') !== undefined;
   }
+
+  removeAccessToken() : void {
+    localStorage.removeItem('todolist-access-token');
+  }
 }

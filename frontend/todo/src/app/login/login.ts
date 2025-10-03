@@ -13,7 +13,6 @@ import { Router } from '@angular/router';
 export class Login {
   email = '';
   password = '';
-  isLoggedIn : boolean = false;
 
   constructor(private loginService:LoginService, private router:Router) {}
 
@@ -22,7 +21,6 @@ export class Login {
     console.log(this.password);
     this.loginService.login(this.email, this.password).subscribe( response => {
       this.loginService.storeAccessToken(response.token);
-      this.isLoggedIn = true;
       this.router.navigate(['home']);
     });
   }
