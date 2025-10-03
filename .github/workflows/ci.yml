@@ -36,9 +36,9 @@ jobs:
                     npm install -g pm2
                 fi
 
-                REPO_URL = "https://github.com/RiccardoParrino/ToDoApp.git"
-                BRANCH = "main"
-                REPO_DIR = "$HOME/ToDoApp"
+                $REPO_URL = "https://github.com/RiccardoParrino/ToDoApp.git"
+                $BRANCH = "main"
+                $REPO_DIR = "$HOME/ToDoApp"
 
                 if [ -d "$REPO_DIR/.git"]; then
                     cd "$REPO_DIR"
