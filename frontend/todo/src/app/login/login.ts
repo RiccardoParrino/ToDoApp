@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LoginService } from '../service/login-service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class Login {
   password = '';
   isLoggedIn : boolean = false;
 
-  constructor(private loginService:LoginService) {}
+  constructor(private loginService:LoginService, private router:Router) {}
 
   login() {
     console.log(this.email);
@@ -22,6 +23,7 @@ export class Login {
     this.loginService.login(this.email, this.password).subscribe( response => {
       this.loginService.storeAccessToken(response.token);
       this.isLoggedIn = true;
+      this.router.navigate(['home']);
     });
   }
 
