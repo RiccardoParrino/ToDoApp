@@ -1,0 +1,19 @@
+<div class="card text-bg-white mb-3 mx-auto" style="max-width: 1300px;" *ngFor="let activity of activities">
+  <div class="card-header">Luogo : {{activity.date}}</div>
+  <div class="card-body">
+    <h5 class="card-title">{{activity.name}}</h5>
+    <p class="card-text">{{activity.description}}</p>
+    <div class="d-flex gap-2">
+        <!-- <a class="btn btn-primary">Marked as done</a> -->
+        <a class="btn btn-primary" (click)="openActivity(activity.name, activity.description)">Open</a>
+        <a class="btn btn-primary" (click)="removeActivity(activity.name)">Remove</a>
+    </div>
+  </div>
+</div>
+
+<app-update-activity-modal 
+  *ngIf="showUpdateModal" 
+  (close)="saveOnCloseUpdateModal($event)"
+  [name]="currentSelectedActivityName"
+  [description]="currentSelectedActivityDescription">
+</app-update-activity-modal>

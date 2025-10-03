@@ -1,0 +1,31 @@
+<div class="container-sm mt-5" style="max-width: 384px;">
+    <div class="img-title-container d-flex align-items-center justify-content-center">
+        <img src="assets/to-do-list.png" alt="Logo" width="64" height="64" class="d-inline-block align-text-top me-3">
+        <h1>Todo-List App</h1>
+    </div>
+    <form>
+        <div class="form-group mb-2 mt-3">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email" [(ngModel)]="email">
+        </div>
+        <div class="form-group mb-2 mt-3">
+            <label for="exampleInputEmail1">Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter name" name="name" [(ngModel)]="name">
+        </div>
+        <div class="form-group mb-2 mt-3">
+            <label for="exampleInputPassword1">Surname</label>
+            <input type="text" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp" placeholder="Enter surname" name="surname" [(ngModel)]="surname">
+        </div>
+        <div class="form-group mb-2 mt-3">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" [(ngModel)]="password">
+        </div>
+        <div class="form-group mb-2 mt-3">
+            <label for="exampleInputPassword1">Repeat password</label>
+            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Repeat password" name="repeatedPassword" [(ngModel)]="repeatedPassword">
+        </div>
+        <div class="form-group mb-2 mt-3 d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary me-2" (click)="registerUser()">Sign up</button>
+        </div>
+    </form>
+</div>

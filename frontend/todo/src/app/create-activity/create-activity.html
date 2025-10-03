@@ -1,0 +1,8 @@
+<div class="create-activity-container">
+    <div class="inner-container">
+        <button class="button" (click)="openModal()">Create new activity</button>
+        <p style="margin-top: 32px; color: #adb5bd;">Total activity: 1200</p>
+    </div>
+</div>
+
+<app-create-activity-modal *ngIf="showModal" (close)="saveOnCloseModal($event)"></app-create-activity-modal>
