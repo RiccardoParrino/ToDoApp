@@ -27,11 +27,6 @@ export class ActivityService {
   }
 
   updateActivity(newActivity:any) : Observable<Boolean> {
-    // const name = req.body.name;
-    // const newName = req.body.newName;
-    // const newDate = req.body.newDate;
-    // const newDescription = req.body.newDescription;
-    // const newCity = req.body.newCity;
     return this.http.post<Boolean>(this.updateEndpoint, newActivity);
   }
 
