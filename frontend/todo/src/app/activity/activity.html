@@ -10,3 +10,10 @@
     </div>
   </div>
 </div>
+
+<app-update-activity-modal 
+  *ngIf="showUpdateModal" 
+  (close)="saveOnCloseUpdateModal($event)"
+  [name]="currentSelectedActivityName"
+  [description]="currentSelectedActivityDescription">
+</app-update-activity-modal>

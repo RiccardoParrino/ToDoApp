@@ -26,13 +26,19 @@ export class ActivityService {
     return this.http.post<Boolean>(this.createEndpoint, newActivity);
   }
 
-  updateActivity(newActivity:ActivityDTO) : Observable<Boolean> {
+  updateActivity(newActivity:any) : Observable<Boolean> {
     const params = new HttpParams()
       .set('name', newActivity.name)
-      .set('description', newActivity.description)
-      .set('date', newActivity.date)
-      .set('city', newActivity.city);
-    return this.http.get<Boolean>(this.updateEndpoint);
+      .set('newName', newActivity.newName)
+      .set('newDescription', newActivity.newDescription)
+      .set('newDate', newActivity.newDate)
+      .set('newCity', newActivity.newCity);
+    // const name = req.body.name;
+    // const newName = req.body.newName;
+    // const newDate = req.body.newDate;
+    // const newDescription = req.body.newDescription;
+    // const newCity = req.body.newCity;
+    return this.http.post<Boolean>(this.updateEndpoint, params);
   }
 
   deleteActivity(name:string) : Observable<any> {
