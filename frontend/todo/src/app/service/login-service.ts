@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LoginDTO } from '../dto/login.dto';
+import { RegistrationDTO } from '../dto/registration.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ import { LoginDTO } from '../dto/login.dto';
 export class LoginService {
 
   loginEndpoint = 'http://localhost:8080/login/loginUser';
+  registrationEndpoint = 'http://localhost:8080/login/createUser';
   
   constructor(private http:HttpClient) {}
 
@@ -18,6 +20,11 @@ export class LoginService {
       'password':password
     };
     return this.http.post<LoginDTO>(this.loginEndpoint, params);
+  }
+
+  register(registrationDto:RegistrationDTO) : Observable<any> {
+    console.log(registrationDto);
+    return this.http.post<any>(this.registrationEndpoint, registrationDto);
   }
 
   getAccessToken() : string | null {

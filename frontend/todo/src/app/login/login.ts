@@ -16,13 +16,17 @@ export class Login {
 
   constructor(private loginService:LoginService, private router:Router) {}
 
-  login() {
+  login() : void {
     console.log(this.email);
     console.log(this.password);
     this.loginService.login(this.email, this.password).subscribe( response => {
       this.loginService.storeAccessToken(response.token);
       this.router.navigate(['home']);
     });
+  }
+
+  signup() : void {
+    this.router.navigate(['registration']);
   }
 
 }
